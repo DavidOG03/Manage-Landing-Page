@@ -1,0 +1,322 @@
+@use './variables/colors' as *;
+@use "./variables/fonts" as *;
+@import "./variables/functions";
+
+.footer-CTA{
+background: $BrightRed;
+padding: 6rem 1.5rem 4rem 1.5rem;
+position: relative;
+overflow: hidden;
+h6{
+    color: $VaryLightGray;
+    font-size: 2.35rem;
+    font-weight: weight(medium);
+    text-align: center;
+
+}
+&-button{
+    display: block;
+    margin: 1.75rem auto ;
+    padding: 0.9rem 2rem;
+    border-radius: 1.5rem;
+    border: none;
+    background: $VaryLightGray;
+    color: $BrightRed;
+    font-family: $fontfamily;
+    font-size: 0.8rem;
+    font-weight: weight(bold);
+    box-shadow: 0rem 0.5rem 0.9rem -0.2rem rgba(rgb(170, 39, 39), $alpha: 0.5);
+    z-index: 1;
+    &:hover{
+        opacity: 0.9;
+        cursor: pointer;
+    }
+}
+
+.first-pattern{
+    position: absolute;
+    top: 3rem;
+    left: -20.5rem;
+    z-index: 0;
+    width: 150%;
+}
+.second-pattern{
+    display: none;
+}
+}
+
+.footer-links{
+    background: $VeryDarkBlue;
+    position: relative;
+    form{
+        padding: 3.2rem 1.5rem;
+        @include dflex;
+        gap: 0.5rem;
+        position: relative;
+        input{
+            border-radius: 2rem;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            outline: none;
+            width: 100%;
+            &::placeholder{
+                color: $DarkGrayishBlue;
+                letter-spacing: -0.03rem;
+            }
+        }
+        .error-msg{
+            position: absolute;
+            top: 6.6rem;
+            left: 2rem;
+            font-style: italic;
+            color: $BrightRed;
+            display: none;
+            // &.active{
+            //     display: block;
+            // }
+        }
+        button{
+            background: $BrightRed;
+            border: none;
+            padding:  0.8rem 1.75rem;
+            border-radius: 2rem;
+            color: $VaryLightGray;
+            &:hover{
+                opacity: 0.8;
+                cursor: pointer;
+            }
+        }
+    }
+    .footer-nav{
+        max-height: 10rem;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+        margin-inline: 4rem 0rem;
+        li{
+            list-style: none;
+            padding-block: 0.45rem;
+            a{
+                text-decoration: none;
+                color: $VaryLightGray;
+                font-weight: weight(regular);
+                font-size: 0.9rem;
+                &:hover{
+                    color: $BrightRed;
+                    
+                }
+            }
+        }
+    }
+    .footer-socials{
+        display: flex;
+        justify-content: center;
+        gap: 2.75rem;
+        margin-top: 3rem;
+        svg{
+            scale: 1.5;
+            &:hover{
+                cursor: pointer;
+                path{
+                    fill: $BrightRed;
+                }
+            }
+        }
+    }
+
+    .footer-logo{
+        display: block;
+        margin:4rem auto 3.3rem auto;
+        width: 42%;
+        max-width: 10rem;
+    }
+
+    small{
+        display: block;
+        text-align: center;
+        padding-bottom: 2rem;
+        letter-spacing: -0.04rem;
+        color: $DarkGrayishBlue;
+
+    }
+
+    #acknowledgement{
+        display: block;
+        text-align: center;
+        color: $VaryLightGray;
+        
+        a{
+            text-decoration: none;
+            color:$DarkGrayishBlue;
+            &:hover{
+                color: $BrightRed;
+            }
+        }
+    }
+}
+
+@media screen and (min-width:1024px) {
+    footer{
+        position: relative;
+        #acknowledgement{
+            display: block;
+            text-align: center;
+            color: $VaryLightGray;
+            position: absolute;
+            bottom: -2rem;
+            left: 0%;
+            // translate: -50% 0;
+            a{
+                text-decoration: none;
+                color:$VeryPaleRed;
+                &:hover{
+                    color: $BrightRed;
+                }
+            }
+        }
+    }
+    .footer-CTA{
+        padding: 4rem 10.9% 4rem 11.1%;
+        @include dflex;
+        h6{
+            font-size: 2.35rem;
+            font-weight: weight(medium);
+            text-align: center;
+            color: $VaryLightGray;
+            text-align: left;
+            max-width: 30rem;
+        }
+        &-button{
+            display: block;
+            margin: unset;
+            margin-left:  auto ;
+            z-index: 10;
+            &:hover{
+                cursor: pointer;
+                opacity: 0.8;
+            }
+        }
+        
+        .first-pattern{
+            top: -1.5rem;
+            left: 10rem;
+            z-index: 1;
+            position: absolute;
+            width: 40%;
+        }
+
+        .second-pattern{
+            display: block;
+            top: -26.5rem;
+            right: -22.5rem;
+            z-index: 1;
+            position: absolute;
+            width: 40%;
+        }
+    }
+    .footer-links{
+        background: $VeryDarkBlue;
+        display: grid;
+        grid-template-areas: 
+        'logo links form'
+        'socials links copyright';
+        grid-template-columns: 20% 1fr 17rem;
+        padding-inline: 11.5% 10.7%;
+        padding-block: 0 3rem;
+        position: relative;
+        form{
+            @include dflex;
+            padding: 3.75rem 0;
+            gap: 0.5rem;
+            max-width: 17rem;
+            grid-area: form;
+            margin-left: auto;
+            input{
+                padding: 0.8rem 1.5rem;
+                border: none;
+                outline: none;
+                width: 100%;
+                border-radius: 2rem;
+                &::placeholder{
+                    color: $DarkGrayishBlue;
+                    letter-spacing: -0.03rem;
+                }
+            }
+            .error-msg{
+                top: 6.8rem;
+                left: 0;
+            }
+            button{
+                border: none;
+                padding:  0.8rem 1.4rem;
+                background: $BrightRed;
+                border-radius: 2rem;
+                color: $VaryLightGray;
+                text-transform: capitalize;
+                &:hover{
+                    cursor: pointer;
+                    opacity: 0.8;
+                }
+            }
+        }
+        .footer-nav{
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-inline: 4rem 0rem;
+            margin-block: 3.4rem 0;
+            grid-area: links;
+            max-height: 10rem;
+            list-style: none;
+            li{
+                padding-block: 0.45rem;
+                a{
+                    color: $VaryLightGray;
+                    font-weight: weight(regular);
+                    font-size: 0.9rem;
+                    text-decoration: none;
+                    &:hover{
+                        color: $BrightRed;
+                    }
+                }
+            }
+        }
+        .footer-socials{
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            gap: 0.85rem;
+            margin-top: unset;
+            grid-area: socials;
+            svg{
+                scale: unset;
+                &:hover{
+                    cursor: pointer;
+                    path{
+                        fill: $BrightRed;
+                    }
+                }
+            }
+        }
+        
+        .footer-logo{
+            display: block;
+            margin:3.5rem auto 3.3rem 0;
+            width: 100%;
+            max-width: 9rem;
+            grid-area: logo;
+        }
+        
+        small{
+            display: block;
+            text-align: right;
+            padding-bottom: unset;
+            grid-area: copyright;
+        }
+        
+    }
+    
+}
+    
